@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="login_text" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textSize">@dimen/fourteen_sp</item>
+    </style>
+
 </resources>
