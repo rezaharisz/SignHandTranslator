@@ -7,10 +7,7 @@
     <string name="registerquest_text">New Here? <b>Register</b></string>
     <string name="register_text">Register</string>
     <string name="full_name_text">Full Name</string>
-    <string name="email_text">Email</string>
     <string name="already_member_text">Already Member? <b>Login</b></string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sign_hand_translator_text">Sign Hand Translator</string>
     <string name="get_started_text">GET STARTED</string>
 </resources>
