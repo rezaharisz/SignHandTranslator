@@ -10,4 +10,19 @@
     <string name="already_member_text">Already Member? <b>Login</b></string>
     <string name="sign_hand_translator_text">Sign Hand Translator</string>
     <string name="get_started_text">GET STARTED</string>
+    <string name="desc_homepage">Let\'s start translating!</string>
+    <string name="desc_homepage2">
+        You can translate through your camera
+        \nor scan image from gallery
+    </string>
+    <string name="camera_text">CAMERA</string>
+    <string name="gallery_text">GALLERY</string>
+
+    <style name="login_text" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textSize">@dimen/fourteen_sp</item>
+    </style>
 </resources>
