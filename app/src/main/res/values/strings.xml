@@ -17,6 +17,7 @@
     </string>
     <string name="camera_text">CAMERA</string>
     <string name="gallery_text">GALLERY</string>
+    <string name="a_alphabet">A</string>
 
     <style name="login_text" >
         <item name="android:layout_width">wrap_content</item>
