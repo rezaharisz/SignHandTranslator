@@ -9,4 +9,7 @@
     <dimen name="sixteen_sp">16sp</dimen>
     <dimen name="onehundred_dp">100dp</dimen>
     <dimen name="twentyfour_dp">24dp</dimen>
+    <dimen name="thirtytwo_dp">32dp</dimen>
+    <dimen name="fourteen_dp">14dp</dimen>
+    <item name="eighteen_point5_dp" type="dimen" format="float">18.5dp</item>
 </resources>
