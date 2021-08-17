@@ -12,4 +12,5 @@
     <color name="gray">#808080</color>
     <color name="teal_300">#4DB6AC</color>
     <color name="blue_300">#006ec7</color>
+    <color name="blue_link">#0645AD</color>
 </resources>

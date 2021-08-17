@@ -43,8 +43,7 @@
 
             <TextView
                 android:id="@+id/tv_phone_number"
-                style="@style/text_style3"
-                android:text="@string/phonenumber_example" />
+                style="@style/text_style3" />
 
         </LinearLayout>
 
@@ -84,8 +83,7 @@
 
             <TextView
                 android:id="@+id/tv_email"
-                style="@style/text_style3"
-                android:text="@string/email_example" />
+                style="@style/text_style3" />
 
         </LinearLayout>
 
@@ -126,8 +124,7 @@
 
             <TextView
                 android:id="@+id/tv_gender"
-                style="@style/text_style3"
-                android:text="@string/gender_example" />
+                style="@style/text_style3" />
 
         </LinearLayout>
 

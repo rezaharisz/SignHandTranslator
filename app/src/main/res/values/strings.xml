@@ -18,18 +18,15 @@
     <string name="camera_text">CAMERA</string>
     <string name="gallery_text">GALLERY</string>
     <string name="a_alphabet">A</string>
-    <string name="username">username</string>
-    <string name="city_example">City Example</string>
-    <string name="name_example">Name Example</string>
+    <string name="username">Username</string>
+    <string name="city_example">City</string>
     <string name="sign">|</string>
     <string name="edit_txt"><u>Edit</u></string>
     <string name="about_me_text">About Me</string>
     <string name="bookmarks_text">Bookmarks</string>
-    <string name="phonenumber_example">+6288228864327</string>
     <string name="phone_number_text">Phone Number</string>
-    <string name="email_example">emailsample123@gmail.com</string>
-    <string name="gender_example">Gender Example</string>
     <string name="gender_text">Gender</string>
+    <string name="name_text">Name</string>
 
     <style name="login_text">
         <item name="android:layout_width">wrap_content</item>
@@ -54,6 +51,24 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:maxLines">1</item>
         <item name="fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/sixteen_sp</item>
+    </style>
+
+    <style name="text_style4">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textColor">@color/blue_link</item>
+        <item name="android:textSize">@dimen/fourteen_sp</item>
+    </style>
+
+    <style name="text_style5">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:maxLines">1</item>
+        <item name="fontFamily">@font/nunito</item>
         <item name="android:textSize">@dimen/sixteen_sp</item>
     </style>
 
