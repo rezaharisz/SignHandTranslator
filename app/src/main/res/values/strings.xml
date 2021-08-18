@@ -9,7 +9,7 @@
     <string name="full_name_text">Full Name</string>
     <string name="already_member_text">Already a Member? <b>Login</b></string>
     <string name="sign_hand_translator_text">Sign Hand Translator</string>
-    <string name="get_started_text">GET STARTED</string>
+    <string name="get_started_text">Get Started</string>
     <string name="desc_homepage">Let\'s start translating!</string>
     <string name="desc_homepage2">
         You can translate through your camera
@@ -30,6 +30,7 @@
     <string name="home_text">Home</string>
     <string name="dictionary_text">Dictionary</string>
     <string name="profile_text">Profile</string>
+    <string name="update_text">Update</string>
 
     <style name="login_text">
         <item name="android:layout_width">wrap_content</item>
@@ -42,19 +43,19 @@
     <style name="text_style2">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:maxLines">1</item>
         <item name="fontFamily">@font/nunito</item>
-        <item name="android:textSize">@dimen/fourteen_sp</item>
+        <item name="android:textSize">@dimen/twelve_sp</item>
     </style>
 
     <style name="text_style3">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:maxLines">1</item>
         <item name="fontFamily">@font/nunito_bold</item>
-        <item name="android:textSize">@dimen/sixteen_sp</item>
+        <item name="android:textSize">@dimen/fourteen_sp</item>
     </style>
 
     <style name="text_style4">

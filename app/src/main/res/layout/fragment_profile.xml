@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".ui.profile.ProfileFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -77,12 +78,16 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_about"
-        android:layout_width="130dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_style2"
         android:fontFamily="@font/nunito"
         android:text="@string/about_me_text"
+        android:paddingStart="@dimen/twentyfour_dp"
+        android:paddingEnd="@dimen/twentyfour_dp"
+        android:paddingTop="@dimen/sixteen_dp"
+        android:paddingBottom="@dimen/sixteen_dp"
         android:textAllCaps="false"
         android:textSize="@dimen/sixteen_sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,12 +98,16 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_bookmarks"
-        android:layout_width="130dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_style3"
         android:fontFamily="@font/nunito"
         android:text="@string/bookmarks_text"
+        android:paddingStart="@dimen/twentyfour_dp"
+        android:paddingEnd="@dimen/twentyfour_dp"
+        android:paddingTop="@dimen/sixteen_dp"
+        android:paddingBottom="@dimen/sixteen_dp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/sixteen_sp"
