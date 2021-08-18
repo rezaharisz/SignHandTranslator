@@ -27,6 +27,9 @@
     <string name="phone_number_text">Phone Number</string>
     <string name="gender_text">Gender</string>
     <string name="name_text">Name</string>
+    <string name="home_text">Home</string>
+    <string name="dictionary_text">Dictionary</string>
+    <string name="profile_text">Profile</string>
 
     <style name="login_text">
         <item name="android:layout_width">wrap_content</item>
