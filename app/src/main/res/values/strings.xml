@@ -31,6 +31,9 @@
     <string name="dictionary_text">Dictionary</string>
     <string name="profile_text">Profile</string>
     <string name="update_text">Update</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_name">Enter your full name</string>
 
     <style name="login_text">
         <item name="android:layout_width">wrap_content</item>

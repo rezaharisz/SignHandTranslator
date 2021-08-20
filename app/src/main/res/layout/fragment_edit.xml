@@ -6,15 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.edit.EditFragment">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profilepic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/change_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView3"
         style="@style/text_style4"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:padding="8dp"
         android:text="@string/name_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_profilepic" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_name"
@@ -138,16 +148,16 @@
         android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/button_style3"
         android:paddingStart="@dimen/twentyfour_dp"
         android:paddingEnd="@dimen/twentyfour_dp"
-        android:background="@drawable/button_style3"
         android:text="@string/update_text"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_about"
         tools:ignore="TextContrastCheck" />
 
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "12316879492",
+    "project_id": "signhandtranslator-skripsi",
+    "storage_bucket": "signhandtranslator-skripsi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12316879492:android:6e1ef4bd4ca9869d2d70d1",
+        "android_client_info": {
+          "package_name": "com.alfikri.signhandtranslator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12316879492-2osvsm38m5d1gn6rrm1u6hme6dn8p758.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR2lcMCY3WaX_KKFKVZ-0mgFCOomOpDj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12316879492-2osvsm38m5d1gn6rrm1u6hme6dn8p758.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
