@@ -35,7 +35,6 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnRegister.setOnClickListener {
-            //DO REGISTER ACTION WITH FIREBASE
             when{
                 binding.edFullname.text.toString().isEmpty() -> {
                     binding.edFullname.error = "Please enter your name"
@@ -62,6 +61,7 @@ class RegisterFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase?.reference?.child("PROFILE")
+        showProgress(true)
 
         firebaseAuth.createUserWithEmailAndPassword(binding.edEmail.text.toString(), binding.edPassword.text.toString())
             .addOnCompleteListener {
@@ -71,13 +71,25 @@ class RegisterFragment : Fragment() {
 
                     userDb?.child("name")?.setValue(binding.edFullname.text.toString())
 
+                    showProgress(false)
+
                     Toast.makeText(context, "Register Successfull, Please Login First", Toast.LENGTH_SHORT).show()
 
                     view?.findNavController()?.navigate(R.id.action_register_to_login)
                 } else{
+                    showProgress(false)
+
                     Toast.makeText(context, "Registration Failed", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun showProgress(state: Boolean){
+        if (state){
+            binding.progressBar.visibility = View.VISIBLE
+        } else{
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
 }

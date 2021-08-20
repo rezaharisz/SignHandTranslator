@@ -25,6 +25,7 @@
         android:background="@color/white"
         android:maxHeight="@dimen/fourteen_dp"
         android:maxWidth="@dimen/fourteen_dp"
+        app:itemIconSize="18dp"
         app:itemTextColor="@color/font_color"
         app:menu="@menu/bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
