@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
+    android:background="@color/background2"
     tools:context=".ui.profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,10 +13,10 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_profile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_marginTop="24dp"
-            android:src="@color/black"
+            android:src="@drawable/ic_profile_change"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +28,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_bold"
             android:text="@string/name_text"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/twentyfour_sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +41,7 @@
             android:fontFamily="@font/nunito_bold"
             android:text="@string/sign"
             android:textSize="@dimen/sixteen_sp"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name" />
@@ -52,6 +53,7 @@
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/nunito"
             android:text="@string/city_example"
+            android:textColor="@color/white"
             android:textSize="@dimen/sixteen_sp"
             app:layout_constraintEnd_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/tv_name" />
@@ -64,6 +66,7 @@
             android:fontFamily="@font/nunito"
             android:text="@string/username"
             android:textSize="@dimen/sixteen_sp"
+            android:textColor="@color/white"
             android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toTopOf="@+id/textView4" />
@@ -75,7 +78,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/nunito"
             android:text="@string/edit_txt"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -92,6 +95,7 @@
             android:paddingEnd="@dimen/twentyfour_dp"
             android:paddingBottom="@dimen/sixteen_dp"
             android:text="@string/about_me_text"
+            android:textColor="@color/black"
             android:textAllCaps="false"
             android:textSize="@dimen/sixteen_sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +117,7 @@
             android:paddingBottom="@dimen/sixteen_dp"
             android:text="@string/bookmarks_text"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/sixteen_sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.8"

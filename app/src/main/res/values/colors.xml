@@ -6,11 +6,12 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="font_color">#2F80ED</color>
     <color name="background_color">#FFF6D5</color>
     <color name="gray">#808080</color>
     <color name="teal_300">#4DB6AC</color>
     <color name="blue_300">#006ec7</color>
     <color name="blue_link">#0645AD</color>
+    <color name="background2">#070d2d</color>
 </resources>
