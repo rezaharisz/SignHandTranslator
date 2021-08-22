@@ -14,4 +14,6 @@
     <color name="blue_300">#006ec7</color>
     <color name="blue_link">#0645AD</color>
     <color name="background2">#070d2d</color>
+    <color name="color_hint">#96768A</color>
+    <color name="gray_cb">#CBB6C2</color>
 </resources>

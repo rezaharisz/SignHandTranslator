@@ -4,131 +4,135 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background"
+    android:background="@color/background2"
     tools:context=".ui.register.RegisterFragment">
 
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="@string/register_text"
-        android:textColor="@color/font_color"
+        android:text="@string/create_new_account_txt"
+        android:textColor="@color/white"
         android:textSize="@dimen/twentyfour_sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002" />
-
-    <TextView
-        android:id="@+id/tv_fullname"
-        style="@style/login_text"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/full_name_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_register"
-        tools:ignore="TextContrastCheck" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/ed_fullname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/box_edtext"
-        android:minHeight="48dp"
-        android:inputType="textPersonName"
-        android:hint="@string/hint_name"
-        android:padding="@dimen/ten_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_fullname"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999"/>
 
     <TextView
-        android:id="@+id/tv_email"
-        style="@style/login_text"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginTop="@dimen/sixteen_dp"
-        android:text="@string/email_text"
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/fill_form_txt"
+        android:textColor="@color/gray_cb"
+        android:textSize="@dimen/fourteen_sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_fullname"
+        app:layout_constraintTop_toBottomOf="@+id/tv_register" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ed_username"
+        style="@style/ed_style1"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/username"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ed_name"
+        style="@style/ed_style1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/full_name_txt"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_username"
         tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/box_edtext"
-        android:minHeight="48dp"
+        style="@style/ed_style1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/email_text"
         android:inputType="textEmailAddress"
-        android:hint="@string/hint_email"
-        android:padding="@dimen/ten_dp"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_name"
+        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/tv_password"
-        style="@style/login_text"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginTop="@dimen/sixteen_dp"
-        android:text="@string/password_text"
-        android:textColor="#1976D2"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ed_phone"
+        style="@style/ed_style1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/phone_number_text"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_email" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_email"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/box_edtext"
-        android:minHeight="48dp"
-        android:hint="@string/hint_password"
-        android:padding="@dimen/ten_dp"
+        style="@style/ed_style1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/password_text"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_phone"
+        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
+        style="@style/btn_style0"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_style"
-        android:fontFamily="@font/nunito_bold"
         android:paddingStart="@dimen/twentyfour_dp"
         android:paddingEnd="@dimen/twentyfour_dp"
         android:text="@string/register_text"
-        android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_password"
+        app:layout_constraintVertical_bias="0.25"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/tv_alreadymember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginBottom="@dimen/sixteen_dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito"
         android:text="@string/already_member_text"
         android:textColor="@color/white"
         android:textSize="@dimen/fourteen_sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
         tools:ignore="TextContrastCheck" />
 
     <ProgressBar

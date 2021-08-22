@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">SignHandTranslator</string>
-    <string name="login_text">Login</string>
-    <string name="email_text">Email</string>
+    <string name="login_text">Sign In</string>
+    <string name="email_text">Email Address</string>
     <string name="password_text">Password</string>
     <string name="forgot_password_text">Forgot Password?</string>
-    <string name="registerquest_text">New Here? <b>Register</b></string>
-    <string name="register_text">Register</string>
+    <string name="registerquest_text">Don\'t have an account? <b>Sign Up</b></string>
+    <string name="register_text">Sign Up</string>
     <string name="full_name_text">Full Name</string>
-    <string name="already_member_text">Already a Member? <b>Login</b></string>
+    <string name="already_member_text">Have an account? <b>Sign In</b></string>
     <string name="sign_hand_translator_text">Sign Hand Translator</string>
     <string name="get_started_text">Get Started</string>
     <string name="desc_homepage">Let\'s start translating!</string>
@@ -31,8 +31,6 @@
     <string name="dictionary_text">Dictionary</string>
     <string name="profile_text">Profile</string>
     <string name="update_text">Update</string>
-    <string name="hint_password">Enter your password</string>
-    <string name="hint_email">Enter your email</string>
     <string name="hint_name">Enter your full name</string>
 
     <style name="login_text">
@@ -80,10 +78,32 @@
         <item name="android:textColorHint">@color/purple_200</item>
         <item name="backgroundTint">@color/purple_500</item>
     </style>
+
+    <style name="ed_style1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/box_edtext</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+    </style>
+
+    <style name="btn_style0">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/nunito_bold</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">@dimen/sixteen_sp</item>
+    </style>
+
     <string name="reset_password_text">Reset Password</string>
     <string name="hi_user_txt">Hi, User !</string>
     <string name="username_hint">Enter your username</string>
     <string name="city_hint">Enter your city</string>
     <string name="about_hint">Write something about yourself</string>
+    <string name="please_sign_in_to_your_account_txt">Please sign in to your account</string>
+    <string name="sign_in_with_google_txt">Sign In With Google</string>
+    <string name="create_new_account_txt">Create new account</string>
+    <string name="fill_form_txt">Please fill in the form to continue</string>
+    <string name="full_name_txt">Full Name</string>
 
 </resources>

@@ -30,6 +30,8 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        firebaseAuth = FirebaseAuth.getInstance()
+
         binding.btnLogin.setOnClickListener {
             when{
                 binding.edEmail.text.toString().isEmpty() -> binding.edEmail.error = "Please enter your email"
@@ -50,7 +52,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun callFirebase(){
-        firebaseAuth = FirebaseAuth.getInstance()
         showProgress(true)
 
         firebaseAuth.signInWithEmailAndPassword(binding.edEmail.text.toString(), binding.edPassword.text.toString())
@@ -58,6 +59,8 @@ class LoginFragment : Fragment() {
                 if (it.isSuccessful){
                     showProgress(false)
                     view?.findNavController()?.navigate(R.id.action_login_to_homepage)
+
+                    binding.btnLogin.isEnabled = false
                 } else{
                     showProgress(false)
                     Toast.makeText(context, "Login failed, please check your email and password", Toast.LENGTH_SHORT).show()

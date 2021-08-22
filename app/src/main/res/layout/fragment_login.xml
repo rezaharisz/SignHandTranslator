@@ -4,114 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/background2"
     tools:context=".ui.login.LoginFragment">
 
     <TextView
-        android:id="@+id/tv_login"
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="@string/login_text"
-        android:textColor="@color/font_color"
+        android:text="@string/sign_hand_translator_text"
+        android:textColor="@color/white"
         android:textSize="@dimen/twentyfour_sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47000003" />
+        app:layout_constraintVertical_bias="0.13999999" />
 
     <TextView
-        android:id="@+id/tv_email"
-        style="@style/login_text"
-        android:layout_marginStart="@dimen/sixteen_dp"
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/email_text"
-        android:textColor="#1976D2"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/please_sign_in_to_your_account_txt"
+        android:textColor="@color/gray_cb"
+        android:textSize="@dimen/fourteen_sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_login" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/box_edtext"
-        android:minHeight="48dp"
-        android:hint="@string/hint_email"
+        style="@style/ed_style1"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/email_text"
         android:inputType="textEmailAddress"
-        android:padding="@dimen/ten_dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/tv_password"
-        style="@style/login_text"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginTop="@dimen/sixteen_dp"
-        android:text="@string/password_text"
-        android:textColor="#1976D2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_email" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36"
+        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginEnd="16dp"
+        style="@style/ed_style1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/password_text"
         android:inputType="textPassword"
-        android:background="@drawable/box_edtext"
-        android:hint="@string/hint_password"
         android:minHeight="48dp"
-        android:padding="@dimen/ten_dp"
+        android:paddingStart="@dimen/sixteen_dp"
+        android:paddingTop="@dimen/sixteen_dp"
+        android:paddingEnd="@dimen/sixteen_dp"
+        android:paddingBottom="@dimen/sixteen_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_email"
+        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/tv_forgotpassword"
         style="@style/login_text"
         android:layout_marginTop="@dimen/sixteen_dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         android:fontFamily="@font/nunito_bold"
         android:text="@string/forgot_password_text"
+        android:textColor="@color/gray_cb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_password" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/button_style"
-        android:fontFamily="@font/nunito_bold"
-        android:paddingStart="@dimen/twentyfour_dp"
-        android:paddingEnd="@dimen/twentyfour_dp"
+        style="@style/btn_style0"
         android:text="@string/login_text"
-        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:background="@drawable/button_style"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_forgotpassword"
+        app:layout_constraintVertical_bias="0.26"
         tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login_google"
+        style="@style/btn_style0"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button_style2"
+        android:drawablePadding="@dimen/ten_dp"
+        android:text="@string/sign_in_with_google_txt"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/sixteen_dp"
-        android:layout_marginBottom="@dimen/sixteen_dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito"
         android:text="@string/registerquest_text"
         android:textColor="@color/white"
         android:textSize="@dimen/fourteen_sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_google"
         tools:ignore="TextContrastCheck" />
 
     <ProgressBar

@@ -34,10 +34,14 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase?.reference?.child("PROFILE")
+
         binding.btnRegister.setOnClickListener {
             when{
-                binding.edFullname.text.toString().isEmpty() -> {
-                    binding.edFullname.error = "Please enter your name"
+                binding.edName.text.toString().isEmpty() -> {
+                    binding.edName.error = "Please enter your name"
                 }
                 binding.edEmail.text.toString().isEmpty() -> {
                     binding.edEmail.error = "Please enter your email"
@@ -49,7 +53,6 @@ class RegisterFragment : Fragment() {
                     callFirebase()
                 }
             }
-
         }
 
         binding.tvAlreadymember.setOnClickListener {
@@ -58,9 +61,6 @@ class RegisterFragment : Fragment() {
     }
 
     private fun callFirebase(){
-        firebaseAuth = FirebaseAuth.getInstance()
-        firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase?.reference?.child("PROFILE")
         showProgress(true)
 
         firebaseAuth.createUserWithEmailAndPassword(binding.edEmail.text.toString(), binding.edPassword.text.toString())
@@ -69,13 +69,17 @@ class RegisterFragment : Fragment() {
                     val currentUser = firebaseAuth.currentUser
                     val userDb = databaseReference?.child(currentUser?.uid.toString())
 
-                    userDb?.child("name")?.setValue(binding.edFullname.text.toString())
+                    userDb?.child("username")?.setValue(binding.edUsername.text.toString())
+                    userDb?.child("name")?.setValue(binding.edName.text.toString())
+                    userDb?.child("phoneNumber")?.setValue(binding.edPhone.text.toString())
 
                     showProgress(false)
 
                     Toast.makeText(context, "Register Successfull, Please Login First", Toast.LENGTH_SHORT).show()
 
                     view?.findNavController()?.navigate(R.id.action_register_to_login)
+
+                    binding.btnRegister.isEnabled = false
                 } else{
                     showProgress(false)
 
