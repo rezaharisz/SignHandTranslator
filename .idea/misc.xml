@@ -22,13 +22,14 @@
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/drawable/ic_profile_selected.xml" value="0.10138888888888889" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/drawable/ic_profile_selector.xml" value="0.10138888888888889" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/drawable/ic_profile_unselected.xml" value="0.10138888888888889" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/drawable/item_navigation_color_selector.xml" value="0.1" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/drawable/rounded_button.xml" value="0.11319444444444444" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/drawable/rounded_layout.xml" value="0.11319444444444444" />
-        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/activity_bottom_nav.xml" value="0.22" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/activity_bottom_nav.xml" value="0.2" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/activity_main.xml" value="0.12" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_bookmarks.xml" value="0.11" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_dictionary.xml" value="0.1" />
-        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_edit.xml" value="0.12" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_edit.xml" value="0.18" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_home.xml" value="0.12" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_login.xml" value="0.18" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
@@ -37,6 +38,7 @@
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_splash.xml" value="0.18" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/item_dictionary.xml" value="0.1" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/profile2.xml" value="0.18" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/menu-v26/bottom_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/menu/bottom_menu.xml" value="0.153125" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/menu/navigation1.xml" value="0.153125" />
       </map>

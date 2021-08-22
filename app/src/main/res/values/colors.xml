@@ -16,4 +16,5 @@
     <color name="background2">#070d2d</color>
     <color name="color_hint">#96768A</color>
     <color name="gray_cb">#CBB6C2</color>
+    <color name="bottom_nav">#0B1449</color>
 </resources>

@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
 
     private fun callFirebase(){
         val user = firebaseAuth.currentUser
-        val userDb = user?.uid?.let { databaseReference?.child(it) }
+        val userDb = databaseReference?.child(user?.uid.toString())
 
         userDb?.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -105,5 +105,6 @@
     <string name="create_new_account_txt">Create new account</string>
     <string name="fill_form_txt">Please fill in the form to continue</string>
     <string name="full_name_txt">Full Name</string>
+    <string name="phone_number_hint">Enter your phone number</string>
 
 </resources>
