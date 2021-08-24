@@ -1,4 +1,4 @@
-package com.alfikri.signhandtranslator.resetpass
+package com.alfikri.signhandtranslator.ui.resetpass
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

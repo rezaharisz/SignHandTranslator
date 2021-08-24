@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.NonNull
 import com.alfikri.signhandtranslator.databinding.FragmentHomeBinding
+import com.alfikri.signhandtranslator.utils.ERROR_MSG
+import com.alfikri.signhandtranslator.utils.PROFILE
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.lang.StringBuilder
@@ -34,7 +37,7 @@ class HomeFragment : Fragment() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase?.reference?.child("PROFILE")
+        databaseReference = firebaseDatabase?.reference?.child(PROFILE)
 
         callFirebase()
 
@@ -52,12 +55,16 @@ class HomeFragment : Fragment() {
         val userDb = databaseReference?.child(user?.uid.toString())
 
         userDb?.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                binding.welcomeUser.text = StringBuilder("Hi, " + snapshot.child("name").value.toString() + " !")
+            override fun onDataChange(@NonNull snapshot: DataSnapshot) {
+                try {
+                    binding.welcomeUser.text = StringBuilder("Hi, " + snapshot.child("name").value.toString() + " !")
+                } catch (e: Exception){
+                    e.printStackTrace()
+                }
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                Log.e("ERROR", error.message)
+            override fun onCancelled(@NonNull error: DatabaseError) {
+                Log.e(ERROR_MSG, error.message)
             }
 
         })

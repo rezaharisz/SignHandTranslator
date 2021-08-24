@@ -29,18 +29,20 @@
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/activity_main.xml" value="0.12" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_bookmarks.xml" value="0.11" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_dictionary.xml" value="0.1" />
-        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_edit.xml" value="0.18" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_edit.xml" value="0.33" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_home.xml" value="0.12" />
-        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_login.xml" value="0.18" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_register.xml" value="0.21" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_reset_pass.xml" value="0.21" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/fragment_splash.xml" value="0.18" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/item_dictionary.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/item_spinner.xml" value="0.153125" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/layout/profile2.xml" value="0.18" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/menu-v26/bottom_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/menu/bottom_menu.xml" value="0.153125" />
         <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/menu/navigation1.xml" value="0.153125" />
+        <entry key="..\:/Kuliah/Skripsi/SignHandTranslator/app/src/main/res/xml/item_spinner.xml" value="0.153125" />
       </map>
     </option>
   </component>

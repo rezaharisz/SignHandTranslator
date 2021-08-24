@@ -6,7 +6,9 @@
         android:radius="@dimen/sixteen_dp"/>
 
     <padding
-        android:top="@dimen/twenty_dp"
-        android:bottom="@dimen/twenty_dp" />
+        android:top="@dimen/sixteen_dp"
+        android:bottom="@dimen/sixteen_dp"
+        android:left="@dimen/twentyfour_dp"
+        android:right="@dimen/twentyfour_dp"/>
 
 </shape>

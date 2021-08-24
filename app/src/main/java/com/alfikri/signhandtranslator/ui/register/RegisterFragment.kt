@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.databinding.FragmentRegisterBinding
+import com.alfikri.signhandtranslator.utils.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -36,7 +37,7 @@ class RegisterFragment : Fragment() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase?.reference?.child("PROFILE")
+        databaseReference = firebaseDatabase?.reference?.child(PROFILE)
 
         binding.btnRegister.setOnClickListener {
             when{
@@ -69,9 +70,9 @@ class RegisterFragment : Fragment() {
                     val currentUser = firebaseAuth.currentUser
                     val userDb = databaseReference?.child(currentUser?.uid.toString())
 
-                    userDb?.child("username")?.setValue(binding.edUsername.text.toString())
-                    userDb?.child("name")?.setValue(binding.edName.text.toString())
-                    userDb?.child("phoneNumber")?.setValue(binding.edPhone.text.toString())
+                    userDb?.child(USERNAME)?.setValue(binding.edUsername.text.toString())
+                    userDb?.child(NAME)?.setValue(binding.edName.text.toString())
+                    userDb?.child(CITY)?.setValue(binding.edCity.text.toString())
 
                     showProgress(false)
 
@@ -83,7 +84,7 @@ class RegisterFragment : Fragment() {
                 } else{
                     showProgress(false)
 
-                    Toast.makeText(context, "Registration Failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Registration Failed, check your internet connection", Toast.LENGTH_SHORT).show()
                 }
             }
     }

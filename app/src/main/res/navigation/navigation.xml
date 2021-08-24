@@ -48,7 +48,7 @@
         tools:layout="@layout/activity_bottom_nav" />
     <fragment
         android:id="@+id/resetPassFragment"
-        android:name="com.alfikri.signhandtranslator.resetpass.ResetPassFragment"
+        android:name="com.alfikri.signhandtranslator.ui.resetpass.ResetPassFragment"
         android:label="fragment_reset_pass"
         tools:layout="@layout/fragment_reset_pass" />
 
