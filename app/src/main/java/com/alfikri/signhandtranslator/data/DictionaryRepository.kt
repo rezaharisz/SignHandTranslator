@@ -3,7 +3,6 @@ package com.alfikri.signhandtranslator.data
 import androidx.lifecycle.MutableLiveData
 import com.alfikri.signhandtranslator.data.local.entity.DataDictionary
 import com.alfikri.signhandtranslator.data.local.sources.LocalDataSources
-import com.alfikri.signhandtranslator.utils.DataDummy
 
 class DictionaryRepository private constructor(private val localDataSources: LocalDataSources): DictionaryDataSources {
 

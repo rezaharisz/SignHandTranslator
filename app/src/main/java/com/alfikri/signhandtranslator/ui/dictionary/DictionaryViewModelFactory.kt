@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.alfikri.signhandtranslator.data.DictionaryRepository
 import com.alfikri.signhandtranslator.di.Injection
-import com.alfikri.signhandtranslator.utils.DataDummy
 
 class DictionaryViewModelFactory(private val dictionaryRepository: DictionaryRepository): ViewModelProvider.Factory{
 

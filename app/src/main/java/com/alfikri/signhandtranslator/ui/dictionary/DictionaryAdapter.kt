@@ -1,5 +1,6 @@
 package com.alfikri.signhandtranslator.ui.dictionary
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.bumptech.glide.Glide
 
 class DictionaryAdapter(private val listDictionary: ArrayList<DataDictionary>): RecyclerView.Adapter<DictionaryAdapter.DictionaryViewHolder>() {
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(dataDictionary: List<DataDictionary>){
         listDictionary.addAll(dataDictionary)
         notifyDataSetChanged()

@@ -1,6 +1,9 @@
 package com.alfikri.signhandtranslator.ui.edit
 
+import android.app.ProgressDialog
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
@@ -16,8 +19,10 @@ import android.widget.Toast
 import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.databinding.ActivityEditBinding
 import com.alfikri.signhandtranslator.utils.*
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
 
 class EditActivity : AppCompatActivity() {
 
@@ -26,6 +31,7 @@ class EditActivity : AppCompatActivity() {
     private var databaseReference: DatabaseReference? = null
     private var firebaseDatabase: FirebaseDatabase? = null
     private var genderText: String? = null
+    private var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +64,26 @@ class EditActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 parent?.clearFocus()
+            }
+        }
+
+        binding.tvChangePic.setOnClickListener {
+            pickImage()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK){
+            if (data != null) {
+                imageUri = data.data
+                Glide.with(this)
+                    .load(imageUri)
+                    .override(50,50)
+                    .into(binding.ivProfile)
+
+                uploadImage()
             }
         }
     }
@@ -106,7 +132,6 @@ class EditActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 Log.e(ERROR_MSG, error.message)
             }
-
         })
     }
 
@@ -167,4 +192,39 @@ class EditActivity : AppCompatActivity() {
 
         })
     }
+
+    private fun pickImage(){
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+
+        startActivityForResult(intent, IMAGE_REQUEST_CODE)
+    }
+
+    private fun uploadImage(){
+        val user = firebaseAuth.currentUser
+
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setMessage("Uploading image ...")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
+
+        val storageReference = FirebaseStorage.getInstance().getReference("images/${user?.uid.toString()}")
+
+        imageUri?.let {
+            storageReference.putFile(it).addOnSuccessListener {
+                binding.ivProfile.setImageURI(null)
+                Toast.makeText(this, "Image successfully uploaded", Toast.LENGTH_SHORT).show()
+                if (progressDialog.isShowing){
+                    progressDialog.dismiss()
+                }
+            } .addOnFailureListener{
+                if (progressDialog.isShowing){
+                    progressDialog.dismiss()
+                }
+                Toast.makeText(this, "Failed uploading image", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
 }
