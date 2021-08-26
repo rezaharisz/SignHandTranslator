@@ -29,18 +29,9 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profile_to_edit"
-            app:destination="@id/editFragment" />
-        <action
             android:id="@+id/action_profile_to_bookmarks"
             app:destination="@id/bookmarksFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/editFragment"
-        android:name="com.alfikri.signhandtranslator.ui.edit.EditFragment"
-        android:label="fragment_edit"
-        tools:layout="@layout/fragment_edit" />
 
     <fragment
         android:id="@+id/bookmarksFragment"

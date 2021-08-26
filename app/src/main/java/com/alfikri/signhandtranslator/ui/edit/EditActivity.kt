@@ -1,42 +1,38 @@
 package com.alfikri.signhandtranslator.ui.edit
 
 import android.graphics.Color
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
-import com.alfikri.signhandtranslator.databinding.FragmentEditBinding
+import com.alfikri.signhandtranslator.R
+import com.alfikri.signhandtranslator.databinding.ActivityEditBinding
 import com.alfikri.signhandtranslator.utils.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.alfikri.signhandtranslator.R
 
-class EditFragment : Fragment() {
+class EditActivity : AppCompatActivity() {
 
-    private var _binding: FragmentEditBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: ActivityEditBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private var databaseReference: DatabaseReference? = null
     private var firebaseDatabase: FirebaseDatabase? = null
+    private var genderText: String? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentEditBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityEditBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        supportActionBar?.title = Html.fromHtml("<font color=#FFFFFF>" + "Edit" + "</font>", 0)
 
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
@@ -56,31 +52,49 @@ class EditFragment : Fragment() {
                 } else{
                     (view as TextView).setTextColor(Color.WHITE)
                 }
-                Toast.makeText(context, resources.getStringArray(R.array.gender_array)[position], Toast.LENGTH_SHORT).show()
+
+                genderText = resources.getStringArray(R.array.gender_array)[position].toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 parent?.clearFocus()
             }
-
         }
+    }
 
-        binding.btnUpdate.setOnClickListener {
-            val name = binding.edName.text.toString()
-            val username = binding.edUsername.text.toString()
-            val phone = binding.edPhone.text.toString()
-            val city = binding.edCity.text.toString()
-            val about = binding.edAbout.text.toString()
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_edit, menu)
+        return true
+    }
 
-            updateFirebase(name, username, phone, city, about)
-        }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_save -> {
+                val name = binding.edName.text.toString()
+                val username = binding.edUsername.text.toString()
+                val phone = binding.edPhone.text.toString()
+                val city = binding.edCity.text.toString()
+                val about = binding.edAbout.text.toString()
+
+                updateFirebase(name, username, phone, city, genderText.toString(), about)
+
+                super.onBackPressed()
+            }
+
+            R.id.action_close -> {
+                super.onBackPressed()
+            }
+            else -> null
+        } ?: return super.onOptionsItemSelected(item)
+
+        return true
     }
 
     private fun callFirebase(){
         val user = firebaseAuth.currentUser
         val userDb = databaseReference?.child(user?.uid.toString())
 
-        userDb?.addValueEventListener(object : ValueEventListener{
+        userDb?.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 binding.edName.setText(snapshot.child(NAME).value.toString())
                 binding.edUsername.setText(snapshot.child(USERNAME).value.toString())
@@ -96,7 +110,7 @@ class EditFragment : Fragment() {
         })
     }
 
-    private fun updateFirebase(name: String, username: String, phone: String, city: String, about: String){
+    private fun updateFirebase(name: String, username: String, phone: String, city: String, gender: String, about: String){
         val user = firebaseAuth.currentUser
         val userDb = databaseReference?.child(user?.uid.toString())
         val userHashMap = mapOf(
@@ -104,19 +118,23 @@ class EditFragment : Fragment() {
             USERNAME to username,
             PHONE_NUMBER to phone,
             CITY to city,
+            GENDER to gender,
             ABOUT_ME to about
         )
 
         userDb?.updateChildren(userHashMap
         )?.addOnSuccessListener {
-            Toast.makeText(context, "Data has been updated", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Data has been updated", Toast.LENGTH_SHORT).show()
         }?.addOnFailureListener {
-            Toast.makeText(context, "Failed Updating Data", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Failed Updating Data", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun spinnerAdapter(genderArray: Array<String>){
-        val spinnerAdapter = object : ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, genderArray){
+        val user = firebaseAuth.currentUser
+        val userDb = databaseReference?.child(user?.uid.toString())
+
+        val spinnerAdapter = object : ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderArray){
             override fun isEnabled(position: Int): Boolean {
                 return position != 0
             }
@@ -134,6 +152,19 @@ class EditFragment : Fragment() {
         }
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spGender.adapter = spinnerAdapter
-    }
 
+        userDb?.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                binding.edName.setText(snapshot.child(NAME).value.toString())
+
+                val spinnerPosition = spinnerAdapter.getPosition(snapshot.child(GENDER).value.toString())
+                binding.spGender.setSelection(spinnerPosition)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e(ERROR_MSG, error.message)
+            }
+
+        })
+    }
 }

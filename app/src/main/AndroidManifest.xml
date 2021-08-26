@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SignHandTranslator">
         <activity
+            android:name=".ui.edit.EditActivity"
+            android:exported="true"/>
+        <activity
             android:name=".ui.BottomNavActivity"
-            android:exported="true" />
+            android:exported="true"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

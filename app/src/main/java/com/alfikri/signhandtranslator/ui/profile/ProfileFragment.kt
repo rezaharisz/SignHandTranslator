@@ -1,5 +1,6 @@
 package com.alfikri.signhandtranslator.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull
 import androidx.navigation.findNavController
 import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.databinding.FragmentProfileBinding
+import com.alfikri.signhandtranslator.ui.edit.EditActivity
 import com.alfikri.signhandtranslator.utils.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -42,7 +44,8 @@ class ProfileFragment : Fragment() {
         callFirebase()
 
         binding.tvEdit.setOnClickListener {
-            view.findNavController().navigate(R.id.action_profile_to_edit)
+            val intent = Intent(context, EditActivity::class.java)
+            context?.startActivity(intent)
         }
 
         binding.btnAbout.setOnClickListener {
@@ -66,6 +69,7 @@ class ProfileFragment : Fragment() {
                     binding.tvUsername.text = snapshot.child(USERNAME).value.toString()
                     binding.tvCity.text = snapshot.child(CITY).value.toString()
                     binding.include.tvPhoneNumber.text = snapshot.child(PHONE_NUMBER).value.toString()
+                    binding.include.tvGender.text = snapshot.child(GENDER).value.toString()
 
                     if (user != null) {
                         binding.include.tvEmail.text = user.email
