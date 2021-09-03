@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import com.alfikri.signhandtranslator.R
+import com.alfikri.signhandtranslator.data.remote.entity.DataUser
 import com.alfikri.signhandtranslator.databinding.ActivityEditBinding
 import com.alfikri.signhandtranslator.utils.*
 import com.bumptech.glide.Glide
@@ -82,8 +83,6 @@ class EditActivity : AppCompatActivity() {
                     .load(imageUri)
                     .override(50,50)
                     .into(binding.ivProfile)
-
-                uploadImage()
             }
         }
     }
@@ -102,15 +101,23 @@ class EditActivity : AppCompatActivity() {
                 val city = binding.edCity.text.toString()
                 val about = binding.edAbout.text.toString()
 
-                updateFirebase(name, username, phone, city, genderText.toString(), about)
+                val dataUser = DataUser(name, username, phone, city, genderText, about)
 
-                super.onBackPressed()
+                if (binding.ivProfile.drawable != null){
+                    updateFirebase(dataUser)
+                    uploadImage()
+                } else{
+                    updateFirebase(dataUser)
+                    finish()
+                }
             }
 
             R.id.action_close -> {
-                super.onBackPressed()
+                finish()
             }
+
             else -> null
+
         } ?: return super.onOptionsItemSelected(item)
 
         return true
@@ -135,23 +142,23 @@ class EditActivity : AppCompatActivity() {
         })
     }
 
-    private fun updateFirebase(name: String, username: String, phone: String, city: String, gender: String, about: String){
+    private fun updateFirebase(dataUser: DataUser){
         val user = firebaseAuth.currentUser
         val userDb = databaseReference?.child(user?.uid.toString())
         val userHashMap = mapOf(
-            NAME to name,
-            USERNAME to username,
-            PHONE_NUMBER to phone,
-            CITY to city,
-            GENDER to gender,
-            ABOUT_ME to about
+            NAME to dataUser.name,
+            USERNAME to dataUser.username,
+            PHONE_NUMBER to dataUser.phone,
+            CITY to dataUser.city,
+            GENDER to dataUser.gender,
+            ABOUT_ME to dataUser.about
         )
 
         userDb?.updateChildren(userHashMap
         )?.addOnSuccessListener {
             Toast.makeText(this, "Data has been updated", Toast.LENGTH_SHORT).show()
         }?.addOnFailureListener {
-            Toast.makeText(this, "Failed Updating Data", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Failed updating data", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -203,26 +210,25 @@ class EditActivity : AppCompatActivity() {
 
     private fun uploadImage(){
         val user = firebaseAuth.currentUser
-
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("Uploading image ...")
-        progressDialog.setCancelable(false)
-        progressDialog.show()
-
         val storageReference = FirebaseStorage.getInstance().getReference("images/${user?.uid.toString()}")
+
+        val progressDialog = ProgressDialog(this).apply {
+            setMessage("Uploading image ...")
+            setCancelable(false)
+            show()
+        }
 
         imageUri?.let {
             storageReference.putFile(it).addOnSuccessListener {
                 binding.ivProfile.setImageURI(null)
-                Toast.makeText(this, "Image successfully uploaded", Toast.LENGTH_SHORT).show()
                 if (progressDialog.isShowing){
                     progressDialog.dismiss()
+                    finish()
                 }
             } .addOnFailureListener{
                 if (progressDialog.isShowing){
                     progressDialog.dismiss()
                 }
-                Toast.makeText(this, "Failed uploading image", Toast.LENGTH_SHORT).show()
             }
         }
     }

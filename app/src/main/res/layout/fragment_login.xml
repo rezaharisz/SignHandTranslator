@@ -34,6 +34,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="@dimen/onehundred_dp"
+        android:layout_height="@dimen/onehundred_dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/hands"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:contentDescription="@string/sign_hand_translator_text" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_email"
         style="@style/ed_style1"
@@ -45,8 +56,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.16000003"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.110000014"
         tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -81,32 +92,17 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
         style="@style/btn_style0"
-        android:text="@string/login_text"
-        android:textColor="@color/white"
-        android:background="@drawable/button_style"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:background="@drawable/button_style"
+        android:text="@string/login_text"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgotpassword"
-        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintVertical_bias="0.19999999"
         tools:ignore="DuplicateSpeakableTextCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_login_google"
-        style="@style/btn_style0"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/button_style2"
-        android:drawablePadding="@dimen/ten_dp"
-        android:text="@string/sign_in_with_google_txt"
-        android:textColor="@color/black"
-        android:drawableStart="@drawable/ic_google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
     <TextView
         android:id="@+id/tv_register"
@@ -119,7 +115,7 @@
         android:textSize="@dimen/fourteen_sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_google"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
         tools:ignore="TextContrastCheck" />
 
     <ProgressBar

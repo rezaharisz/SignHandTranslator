@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:maxHeight="@dimen/fourteen_dp"
         android:background="@color/bottom_nav"
-        
         android:maxWidth="@dimen/fourteen_dp"
         app:itemIconSize="@dimen/twentyfour_dp"
         app:itemTextColor="@color/font_color"

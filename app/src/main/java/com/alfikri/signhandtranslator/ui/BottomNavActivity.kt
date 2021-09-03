@@ -2,12 +2,15 @@ package com.alfikri.signhandtranslator.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.alfikri.signhandtranslator.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BottomNavActivity : AppCompatActivity() {
+
+    private var doubleBackExit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +24,18 @@ class BottomNavActivity : AppCompatActivity() {
         bottomNav.setupWithNavController(navController)
 
         bottomNav.itemIconTintList = null
+    }
+
+    override fun onBackPressed() {
+        if (doubleBackExit){
+            finishAffinity()
+            return
+        }
+
+        this.doubleBackExit = true
+
+        Handler().postDelayed(
+            { doubleBackExit = false }, 2000)
     }
 
 }

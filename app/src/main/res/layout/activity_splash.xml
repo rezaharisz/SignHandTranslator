@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background2"
-    tools:context=".ui.splash.SplashFragment">
+    tools:context=".ui.splash.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -30,24 +30,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_getstarted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/button_style"
-        android:fontFamily="@font/nunito_bold"
-        android:paddingStart="@dimen/twentyfour_dp"
-        android:paddingTop="@dimen/sixteen_dp"
-        android:paddingEnd="@dimen/twentyfour_dp"
-        android:paddingBottom="@dimen/sixteen_dp"
-        android:text="@string/get_started_text"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="@dimen/fourteen_sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
