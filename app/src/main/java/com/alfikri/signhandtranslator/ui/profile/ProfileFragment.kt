@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.navigation.findNavController
-import com.alfikri.signhandtranslator.MainActivity
 import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.databinding.FragmentProfileBinding
 import com.alfikri.signhandtranslator.ui.edit.EditActivity

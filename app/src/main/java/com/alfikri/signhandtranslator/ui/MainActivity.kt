@@ -1,9 +1,9 @@
-package com.alfikri.signhandtranslator
+package com.alfikri.signhandtranslator.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.alfikri.signhandtranslator.ui.BottomNavActivity
+import com.alfikri.signhandtranslator.R
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {

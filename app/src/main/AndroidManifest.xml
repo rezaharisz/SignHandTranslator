@@ -17,9 +17,7 @@
         <activity
             android:name=".ui.BottomNavActivity"
             android:exported="true" />
-        <activity android:name=".MainActivity"
-            android:exported="true" />
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

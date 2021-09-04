@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.navigation.findNavController
 import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.databinding.FragmentLoginBinding
@@ -30,6 +31,10 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireActivity().onBackPressedDispatcher.addCallback(this){
+            activity?.finish()
+        }
+
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.btnLogin.setOnClickListener {
@@ -49,6 +54,7 @@ class LoginFragment : Fragment() {
         binding.tvRegister.setOnClickListener {
             view.findNavController().navigate(R.id.action_login_to_register)
         }
+
     }
 
     private fun callFirebase(){
