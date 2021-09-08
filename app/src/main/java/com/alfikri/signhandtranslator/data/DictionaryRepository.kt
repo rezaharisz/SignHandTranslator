@@ -1,19 +1,14 @@
 package com.alfikri.signhandtranslator.data
 
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
 import com.alfikri.signhandtranslator.data.local.entity.DataDictionary
 import com.alfikri.signhandtranslator.data.local.sources.LocalDataSources
+import com.alfikri.signhandtranslator.utils.PAGE_SIZE
+import com.alfikri.signhandtranslator.utils.PLACEHOLDERS
 
 class DictionaryRepository private constructor(private val localDataSources: LocalDataSources): DictionaryDataSources {
-
-    private val listDictionary = MutableLiveData<ArrayList<DataDictionary>>()
-
-    override fun getDictionary(): MutableLiveData<ArrayList<DataDictionary>> {
-        val dictionaryItem = localDataSources.getDictionary()
-        listDictionary.postValue(dictionaryItem)
-
-        return listDictionary
-    }
 
     companion object{
         @Volatile
@@ -24,4 +19,18 @@ class DictionaryRepository private constructor(private val localDataSources: Loc
                 instance ?: DictionaryRepository(localDataSources).apply { instance = this }
             }
     }
+
+    override fun getDictionary(): LiveData<PagedList<DataDictionary>> {
+        val config = PagedList.Config.Builder()
+            .setPageSize(PAGE_SIZE)
+            .setEnablePlaceholders(PLACEHOLDERS)
+            .build()
+
+        return LivePagedListBuilder(localDataSources.getDictionary(), config).build()
+    }
+
+    override fun insertDictionary(dataDictionary: List<DataDictionary>) {
+        localDataSources.insertDictionary(dataDictionary)
+    }
+
 }

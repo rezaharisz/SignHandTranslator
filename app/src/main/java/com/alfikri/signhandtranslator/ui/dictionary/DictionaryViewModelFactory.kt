@@ -1,5 +1,6 @@
 package com.alfikri.signhandtranslator.ui.dictionary
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.alfikri.signhandtranslator.data.DictionaryRepository
@@ -20,9 +21,9 @@ class DictionaryViewModelFactory(private val dictionaryRepository: DictionaryRep
         @Volatile
         private var instance: DictionaryViewModelFactory? = null
 
-        fun getInstance(): DictionaryViewModelFactory =
+        fun getInstance(context: Context): DictionaryViewModelFactory =
             instance ?: synchronized(this){
-                instance ?: DictionaryViewModelFactory(Injection.getRepository()).apply { instance = this }
+                instance ?: DictionaryViewModelFactory(Injection.getRepository(context)).apply { instance = this }
             }
     }
 

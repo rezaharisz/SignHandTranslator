@@ -1,12 +1,17 @@
 package com.alfikri.signhandtranslator.ui.dictionary
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.data.local.entity.DataDictionary
 import com.alfikri.signhandtranslator.databinding.FragmentDictionaryBinding
 
@@ -14,7 +19,7 @@ class DictionaryFragment : Fragment() {
 
     private var _binding: FragmentDictionaryBinding? = null
     private val binding get() = _binding!!
-    private lateinit var dictionaryAdapter: DictionaryAdapter
+    private lateinit var rvDictionary: RecyclerView
     private lateinit var dictionaryViewModel: DictionaryViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -30,25 +35,26 @@ class DictionaryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val factory = DictionaryViewModelFactory.getInstance()
-        dictionaryViewModel = ViewModelProvider(this, factory)[DictionaryViewModel::class.java]
+        rvDictionary = view.findViewById(R.id.rv_dictionary)
 
-        dictionaryAdapter = DictionaryAdapter(mutableListOf<DataDictionary>() as ArrayList<DataDictionary>)
+        rvDictionary.layoutManager = LinearLayoutManager(activity)
+        rvDictionary.setHasFixedSize(true)
+
+        val factory = context?.let { DictionaryViewModelFactory.getInstance(it) }
+        dictionaryViewModel = factory?.let { ViewModelProvider(this, it) }!![DictionaryViewModel::class.java]
 
         dictionaryViewModel.getDictionary().observe(viewLifecycleOwner, {
-            setAdapter()
-
-            if (it != null){
-                dictionaryAdapter.setData(it)
-                it.clear()
-            }
+            getAdapter(it)
         })
     }
 
-    private fun setAdapter(){
-        binding.rvDictionary.adapter = dictionaryAdapter
-        binding.rvDictionary.layoutManager = LinearLayoutManager(context)
-        binding.rvDictionary.setHasFixedSize(true)
+    @SuppressLint("NotifyDataSetChanged")
+    private fun getAdapter(dictionary: PagedList<DataDictionary>){
+        val dictionaryAdapter = DictionaryAdapter()
+
+        dictionaryAdapter.submitList(dictionary)
+        dictionaryAdapter.notifyDataSetChanged()
+        rvDictionary.adapter = dictionaryAdapter
     }
 
 }

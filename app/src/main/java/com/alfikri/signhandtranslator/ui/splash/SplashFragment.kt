@@ -25,7 +25,6 @@ class SplashFragment : Fragment() {
 
         Handler(getMainLooper()).postDelayed({
             view.findNavController().navigate(R.id.action_splash_to_login)
-            fragmentManager?.beginTransaction()?.detach(this)?.commit()
         }, displayLength.toLong())
     }
 

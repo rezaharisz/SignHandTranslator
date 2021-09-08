@@ -9,3 +9,5 @@ const val ABOUT_ME = "about_me"
 const val GENDER = "gender"
 const val ERROR_MSG = "error_msg"
 const val IMAGE_REQUEST_CODE = 100
+const val PAGE_SIZE = 30
+const val PLACEHOLDERS = true
