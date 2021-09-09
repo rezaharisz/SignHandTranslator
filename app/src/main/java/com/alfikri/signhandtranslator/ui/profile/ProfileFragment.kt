@@ -61,6 +61,7 @@ class ProfileFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             firebaseAuth.signOut()
             activity?.finish()
+            activity?.setResult(RESULT_LOGIN)
         }
 
         binding.btnAbout.setOnClickListener {

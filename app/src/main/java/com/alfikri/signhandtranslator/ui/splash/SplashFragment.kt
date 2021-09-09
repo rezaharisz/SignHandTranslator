@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts.*
 import androidx.navigation.findNavController
 import com.alfikri.signhandtranslator.R
+import com.alfikri.signhandtranslator.utils.RESULT_LOGIN
 
 class SplashFragment : Fragment() {
 
@@ -26,6 +28,13 @@ class SplashFragment : Fragment() {
         Handler(getMainLooper()).postDelayed({
             view.findNavController().navigate(R.id.action_splash_to_login)
         }, displayLength.toLong())
+
+        registerForActivityResult(StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_LOGIN) {
+                view.findNavController().navigate(R.id.action_splash_to_login)
+            }
+
+        }
     }
 
 }
