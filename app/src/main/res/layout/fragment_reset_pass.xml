@@ -7,19 +7,31 @@
     android:background="@color/background2"
     tools:context=".ui.resetpass.ResetPassFragment">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/ed_email"
-        style="@style/ed_style1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/email_text"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
+        android:textColorHint="@color/color_hint"
+        app:boxBackgroundMode="none"
+        app:hintEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_email"
+            style="@style/ed_style1"
+            android:hint="@string/email_text"
+            android:importantForAutofill="noExcludeDescendants"
+            android:inputType="textFilter"
+            android:minHeight="48dp"
+            android:padding="@dimen/sixteen_dp"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_reset"
@@ -37,7 +49,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_email"
+        app:layout_constraintTop_toBottomOf="@+id/txt_email"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <ProgressBar

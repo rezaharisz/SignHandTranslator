@@ -51,7 +51,12 @@ class RegisterFragment : Fragment() {
                     binding.edPassword.error = "Please enter your password"
                 }
                 else -> {
-                    callFirebase()
+                    if (binding.edPassword.text.toString() == binding.edRepeatPassword.text.toString()){
+                        callFirebase()
+                    } else{
+                        binding.edPassword.error = "Password must same"
+                        binding.edRepeatPassword.error = "Password must same"
+                    }
                 }
             }
         }

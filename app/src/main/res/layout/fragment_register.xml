@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999"/>
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <TextView
         android:id="@+id/textView12"
@@ -34,75 +34,159 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_register" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/ed_username"
-        style="@style/ed_style1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_usernamelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:textColorHint="@color/color_hint"
+        app:boxBackgroundMode="none"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/username"
-        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.04000002"
-        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+        app:layout_constraintVertical_bias="0.04000002">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/ed_name"
-        style="@style/ed_style1"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_username"
+            style="@style/ed_style1"
+            android:padding="@dimen/sixteen_dp"
+            android:hint="@string/username"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_namelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:textColorHint="@color/color_hint"
+        app:boxBackgroundMode="none"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/full_name_txt"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_username"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_usernamelayout">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/ed_city"
-        style="@style/ed_style1"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_name"
+            style="@style/ed_style1"
+            android:padding="@dimen/sixteen_dp"
+            android:hint="@string/full_name_txt"
+            android:inputType="textFilter|textCapWords"
+            android:importantForAutofill="noExcludeDescendants"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_citylayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:textColorHint="@color/color_hint"
+        app:boxBackgroundMode="none"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/city_example"
-        android:inputType="text"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ed_name"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@id/txt_namelayout">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/ed_email"
-        style="@style/ed_style1"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_city"
+            style="@style/ed_style1"
+            android:padding="@dimen/sixteen_dp"
+            android:hint="@string/city_example"
+            android:inputType="text|textCapWords"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_emaillayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:textColorHint="@color/color_hint"
+        app:boxBackgroundMode="none"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/email_text"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_city"
-        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_citylayout">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/ed_password"
-        style="@style/ed_style1"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_email"
+            style="@style/ed_style1"
+            android:padding="@dimen/sixteen_dp"
+            android:hint="@string/email_text"
+            android:inputType="textFilter"
+            android:importantForAutofill="noExcludeDescendants"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_passwordlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:textColorHint="@color/color_hint"
+        app:boxBackgroundMode="none"
+        app:passwordToggleEnabled="true"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/password_text"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_email"
-        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_emaillayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_password"
+            style="@style/ed_style1"
+            android:padding="@dimen/sixteen_dp"
+            android:hint="@string/password_text"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_rptpasswordlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:textColorHint="@color/color_hint"
+        app:boxBackgroundMode="none"
+        app:passwordToggleEnabled="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_passwordlayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_repeat_password"
+            style="@style/ed_style1"
+            android:padding="@dimen/sixteen_dp"
+            android:hint="@string/txt_repeat_password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register"
@@ -115,23 +199,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_password"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintTop_toBottomOf="@+id/txt_rptpasswordlayout"
+        app:layout_constraintVertical_bias="0.19999999"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/tv_alreadymember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito"
         android:text="@string/already_member_text"
         android:textColor="@color/white"
         android:textSize="@dimen/fourteen_sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register"
-        app:layout_constraintVertical_bias="0.25"
         tools:ignore="TextContrastCheck" />
 
     <ProgressBar
