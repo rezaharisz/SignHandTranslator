@@ -3,6 +3,8 @@
     package="com.alfikri.signhandtranslator">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera.any"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SignHandTranslator">
+        <activity
+            android:name=".ui.camera.CameraActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.edit.EditActivity"
             android:exported="true" />

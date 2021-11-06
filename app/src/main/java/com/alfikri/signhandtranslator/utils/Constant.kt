@@ -1,5 +1,6 @@
 package com.alfikri.signhandtranslator.utils
 
+const val SIGN_TRANSLATOR = "sign_translator"
 const val PROFILE = "profile"
 const val USERNAME = "username"
 const val NAME = "name"
