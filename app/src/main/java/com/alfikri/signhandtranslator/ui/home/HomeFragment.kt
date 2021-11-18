@@ -44,13 +44,8 @@ class HomeFragment : Fragment() {
         callFirebase()
 
         binding.btnCamera.setOnClickListener {
-            //DO SOME ACTION WITH CAMERA
             val intent = Intent(context, CameraActivity::class.java)
             startActivity(intent)
-        }
-
-        binding.btnGallery.setOnClickListener {
-            //DO SOME ACTION WITH GALLERY
         }
     }
 

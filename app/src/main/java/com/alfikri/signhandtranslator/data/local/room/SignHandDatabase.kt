@@ -58,7 +58,8 @@ abstract class SignHandDatabase: RoomDatabase() {
                             DataDictionary(
                                 item.getInt("id"),
                                 item.getString("hand_picture"),
-                                item.getString("alphabet")
+                                item.getString("alphabet"),
+                                item.getBoolean("bookmark")
                             )
                         )
                     }

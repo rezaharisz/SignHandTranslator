@@ -9,15 +9,16 @@ import com.alfikri.signhandtranslator.data.local.entity.DataDictionary
 import com.alfikri.signhandtranslator.databinding.ItemDictionaryBinding
 import com.bumptech.glide.Glide
 
-class DictionaryAdapter: PagedListAdapter<DataDictionary, DictionaryAdapter.DictionaryViewHolder>(DIFF_CALLBACK) {
+class DictionaryAdapter(private val dictionaryClickListener: DictionaryClickListener): PagedListAdapter<DataDictionary, DictionaryAdapter.DictionaryViewHolder>(DIFF_CALLBACK) {
 
     class DictionaryViewHolder(private val binding: ItemDictionaryBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(dataDictionary: DataDictionary){
+        fun bind(dataDictionary: DataDictionary, clickListener: (dictionary: DataDictionary) -> Unit){
             Glide.with(itemView)
                 .load(dataDictionary.imageHand)
                 .override(150,150)
                 .into(binding.ivHandsign)
             binding.tvAlphabet.text = dataDictionary.alphabet
+            binding.btnBookmark.setOnClickListener { clickListener(dataDictionary) }
         }
     }
 
@@ -29,7 +30,8 @@ class DictionaryAdapter: PagedListAdapter<DataDictionary, DictionaryAdapter.Dict
     override fun onBindViewHolder(holder: DictionaryViewHolder, position: Int) {
         val dictionary = getItem(position)
         if (dictionary != null){
-            holder.bind(dictionary)
+            holder.bind(dictionary, dictionaryClickListener.clickListener)
+            holder.bind(getItem(position)!!, dictionaryClickListener.clickListener)
         }
     }
 
@@ -45,5 +47,7 @@ class DictionaryAdapter: PagedListAdapter<DataDictionary, DictionaryAdapter.Dict
 
         }
     }
+
+    data class DictionaryClickListener(val clickListener: (dictionary: DataDictionary) -> Unit)
 
 }

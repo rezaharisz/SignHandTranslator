@@ -10,6 +10,13 @@ class LocalDataSources private constructor(private val signHandDao: SignHandDao)
 
     fun insertDictionary(dataDictionary: List<DataDictionary>) = signHandDao.insertData(dataDictionary)
 
+    fun getBookmarks(): DataSource.Factory<Int, DataDictionary> = signHandDao.getBookmarks()
+
+    fun setBookmark(dataDictionary: DataDictionary, state: Boolean){
+        dataDictionary.setFavorite = state
+        signHandDao.updateBookmarks(dataDictionary)
+    }
+
     companion object{
         private var INSTANCE: LocalDataSources? = null
 

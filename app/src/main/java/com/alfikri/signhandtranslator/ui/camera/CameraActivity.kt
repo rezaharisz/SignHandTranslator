@@ -132,7 +132,7 @@ class CameraActivity : AppCompatActivity() {
             output.firstOrNull()?.let {
                 val percentage = (it.score / 1) * 100
 
-                if (percentage > 20){
+                if (percentage > 30){
                     binding.tvOutput.text = it.label
                 } else {
                     binding.tvOutput.text = ""

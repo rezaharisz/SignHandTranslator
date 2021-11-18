@@ -16,7 +16,6 @@
         \nor scan image from gallery
     </string>
     <string name="camera_text">CAMERA</string>
-    <string name="gallery_text">GALLERY</string>
     <string name="a_alphabet">A</string>
     <string name="username">Username</string>
     <string name="city_example">City</string>
@@ -137,5 +136,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="translation_text">Start Translating</string>
+    <string name="bookmark_text">Bookmark</string>
 
 </resources>

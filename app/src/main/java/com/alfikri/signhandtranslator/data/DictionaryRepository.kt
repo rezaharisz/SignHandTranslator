@@ -33,4 +33,18 @@ class DictionaryRepository private constructor(private val localDataSources: Loc
         localDataSources.insertDictionary(dataDictionary)
     }
 
+    override fun getBookmarks(): LiveData<PagedList<DataDictionary>> {
+        val config = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
+            .setInitialLoadSizeHint(4)
+            .setPageSize(4)
+            .build()
+
+        return LivePagedListBuilder(localDataSources.getBookmarks(), config).build()
+    }
+
+    override fun setBookmark(dataDictionary: DataDictionary, state: Boolean) {
+        localDataSources.setBookmark(dataDictionary, state)
+    }
+
 }

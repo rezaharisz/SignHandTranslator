@@ -19,6 +19,10 @@ data class DataDictionary(
 
     @NotNull
     @ColumnInfo(name = "alphabet")
-    val alphabet: String
+    val alphabet: String,
+
+    @NotNull
+    @ColumnInfo(name = "set_favorite")
+    var setFavorite: Boolean = false
 
 )

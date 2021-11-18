@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.data.local.entity.DataDictionary
 import com.alfikri.signhandtranslator.databinding.FragmentDictionaryBinding
+import kotlinx.coroutines.launch
 
 class DictionaryFragment : Fragment() {
 
@@ -45,11 +48,14 @@ class DictionaryFragment : Fragment() {
         dictionaryViewModel.getDictionary().observe(viewLifecycleOwner, {
             getAdapter(it)
         })
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
     private fun getAdapter(dictionary: PagedList<DataDictionary>){
-        val dictionaryAdapter = DictionaryAdapter()
+        val dictionaryAdapter = DictionaryAdapter(DictionaryAdapter.DictionaryClickListener {
+            dictionaryViewModel.setBookmark()
+        })
 
         dictionaryAdapter.submitList(dictionary)
         dictionaryAdapter.notifyDataSetChanged()

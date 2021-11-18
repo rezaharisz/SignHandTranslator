@@ -10,4 +10,8 @@ interface DictionaryDataSources {
 
     fun insertDictionary(dataDictionary: List<DataDictionary>)
 
+    fun getBookmarks(): LiveData<PagedList<DataDictionary>>
+
+    fun setBookmark(dataDictionary: DataDictionary, state: Boolean)
+
 }
