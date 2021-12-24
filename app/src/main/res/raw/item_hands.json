@@ -2,146 +2,158 @@
   "signhand": [
     {
       "id": 1,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/A/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/a/hand1_a_bot_seg_1_cropped.jpeg",
       "alphabet": "A",
       "bookmark" : false
     },
     {
       "id": 2,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/B/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/b/hand1_b_bot_seg_1_cropped.jpeg",
       "alphabet": "B",
       "bookmark" : false
     },
     {
       "id": 3,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/C/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/c/hand1_c_bot_seg_1_cropped.jpeg",
       "alphabet": "C",
       "bookmark" : false
     },
     {
       "id": 4,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/D/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/d/hand1_d_bot_seg_1_cropped.jpeg",
       "alphabet": "D",
       "bookmark" : false
     },
     {
       "id": 5,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/E/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/e/hand1_e_bot_seg_1_cropped.jpeg",
       "alphabet": "E",
       "bookmark" : false
     },
     {
       "id": 6,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/F/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/f/hand1_f_bot_seg_1_cropped.jpeg",
       "alphabet": "F",
       "bookmark" : false
     },
     {
       "id": 7,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/G/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/g/hand1_g_bot_seg_1_cropped.jpeg",
       "alphabet": "G",
       "bookmark" : false
     },
     {
       "id": 8,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/H/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/h/hand1_h_bot_seg_1_cropped.jpeg",
       "alphabet": "H",
       "bookmark" : false
     },
     {
       "id": 9,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/I/1.png",
+      "hand_picture": "https://github.com/rezaharisz/SignHand-ML/blob/master/Datasets/i/hand1_i_bot_seg_1_cropped.jpeg",
       "alphabet": "I",
       "bookmark" : false
     },
     {
       "id": 10,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/K/1.png",
-      "alphabet": "K",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/j/hand1_j_bot_seg_1_cropped.jpeg",
+      "alphabet": "J",
       "bookmark" : false
     },
     {
       "id": 11,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/L/1.png",
-      "alphabet": "L",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/k/hand1_k_bot_seg_1_cropped.jpeg",
+      "alphabet": "K",
       "bookmark" : false
     },
     {
       "id": 12,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/M/1.png",
-      "alphabet": "M",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/l/hand1_l_bot_seg_1_cropped.jpeg",
+      "alphabet": "L",
       "bookmark" : false
     },
     {
       "id": 13,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/N/1.png",
-      "alphabet": "N",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/m/hand1_m_bot_seg_1_cropped.jpeg",
+      "alphabet": "M",
       "bookmark" : false
     },
     {
       "id": 14,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/O/1.png",
-      "alphabet": "O",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/n/hand1_n_bot_seg_1_cropped.jpeg",
+      "alphabet": "N",
       "bookmark" : false
     },
     {
       "id": 15,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/P/1.png",
-      "alphabet": "P",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/o/hand1_o_bot_seg_1_cropped.jpeg",
+      "alphabet": "O",
       "bookmark" : false
     },
     {
       "id": 16,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/Q/1.png",
-      "alphabet": "Q",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/p/hand1_p_bot_seg_1_cropped.jpeg",
+      "alphabet": "P",
       "bookmark" : false
     },
     {
       "id": 17,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/R/1.png",
-      "alphabet": "R",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/q/hand1_q_bot_seg_1_cropped.jpeg",
+      "alphabet": "Q",
       "bookmark" : false
     },
     {
       "id": 18,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/S/1.png",
-      "alphabet": "S",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/r/hand1_r_bot_seg_1_cropped.jpeg",
+      "alphabet": "R",
       "bookmark" : false
     },
     {
       "id": 19,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/T/1.png",
-      "alphabet": "T",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/s/hand1_s_bot_seg_1_cropped.jpeg",
+      "alphabet": "S",
       "bookmark" : false
     },
     {
       "id": 20,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/U/1.png",
-      "alphabet": "U",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/t/hand1_t_bot_seg_1_cropped.jpeg",
+      "alphabet": "T",
       "bookmark" : false
     },
     {
       "id": 21,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/V/1.png",
-      "alphabet": "V",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/u/hand1_u_bot_seg_1_cropped.jpeg",
+      "alphabet": "U",
       "bookmark" : false
     },
     {
       "id": 22,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/W/1.png",
-      "alphabet": "W",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/v/hand1_v_bot_seg_1_cropped.jpeg",
+      "alphabet": "V",
       "bookmark" : false
     },
     {
       "id": 23,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/X/1.png",
-      "alphabet": "X",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/w/hand1_w_bot_seg_1_cropped.jpeg",
+      "alphabet": "W",
       "bookmark" : false
     },
     {
       "id": 24,
-      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/Y/1.png",
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/x/hand1_x_bot_seg_1_cropped.jpeg",
+      "alphabet": "X",
+      "bookmark" : false
+    },
+    {
+      "id": 25,
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/y/hand1_y_bot_seg_1_cropped.jpeg",
       "alphabet": "Y",
+      "bookmark" : false
+    },
+    {
+      "id": 26,
+      "hand_picture": "https://raw.githubusercontent.com/rezaharisz/SignHand-ML/master/Datasets/z/hand1_z_bot_seg_1_cropped.jpeg",
+      "alphabet": "Z",
       "bookmark" : false
     }
   ]
