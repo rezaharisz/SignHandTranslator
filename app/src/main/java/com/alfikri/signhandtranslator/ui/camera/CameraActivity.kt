@@ -21,6 +21,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.label.Category
+import java.lang.StringBuilder
+import java.text.DecimalFormat
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import kotlin.math.abs
@@ -132,8 +134,10 @@ class CameraActivity : AppCompatActivity() {
             output.firstOrNull()?.let {
                 val percentage = (it.score / 1) * 100
 
-                if (percentage > 30){
-                    binding.tvOutput.text = it.label
+                if (percentage > 40){
+                    binding.tvOutput.text = StringBuilder().append(it.label).append(" ${DecimalFormat(
+                        "##"
+                    ).format(percentage)} %")
                 } else {
                     binding.tvOutput.text = ""
                 }
