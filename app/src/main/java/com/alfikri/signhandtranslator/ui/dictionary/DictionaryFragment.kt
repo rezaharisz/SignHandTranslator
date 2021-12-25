@@ -53,7 +53,12 @@ class DictionaryFragment : Fragment() {
     private fun getAdapter(dictionary: PagedList<DataDictionary>){
         val dictionaryAdapter = DictionaryAdapter(DictionaryAdapter.DictionaryClickListener {
             dictionaryViewModel.setBookmark(it, !it.setFavorite)
-            Toast.makeText(context, "Data has been addded to bookmarks", Toast.LENGTH_SHORT).show()
+
+            if(!it.setFavorite){
+                Toast.makeText(context, "Data has been addded to bookmarks", Toast.LENGTH_SHORT).show()
+            } else{
+                Toast.makeText(context, "Data has been removed from bookmarks", Toast.LENGTH_SHORT).show()
+            }
         })
 
         dictionaryAdapter.submitList(dictionary)

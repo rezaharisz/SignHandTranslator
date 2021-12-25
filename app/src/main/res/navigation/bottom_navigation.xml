@@ -28,15 +28,6 @@
         android:name="com.alfikri.signhandtranslator.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profile_to_bookmarks"
-            app:destination="@id/bookmarksFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/bookmarksFragment"
-        android:name="com.alfikri.signhandtranslator.ui.bookmarks.BookmarksFragment"
-        android:label="fragment_bookmarks"
-        tools:layout="@layout/fragment_bookmarks" />
 
 </navigation>

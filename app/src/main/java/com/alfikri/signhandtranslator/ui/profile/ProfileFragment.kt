@@ -10,9 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.NonNull
-import androidx.navigation.findNavController
 import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.databinding.FragmentProfileBinding
+import com.alfikri.signhandtranslator.ui.bookmarks.BookmarksActivity
 import com.alfikri.signhandtranslator.ui.edit.EditActivity
 import com.alfikri.signhandtranslator.utils.*
 import com.bumptech.glide.Glide
@@ -90,7 +90,8 @@ class ProfileFragment : Fragment() {
         }
 
         binding.btnBookmarks.setOnClickListener {
-            view.findNavController().navigate(R.id.action_profile_to_bookmarks)
+            val intent = Intent(context, BookmarksActivity::class.java)
+            context?.startActivity(intent)
         }
     }
 

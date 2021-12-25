@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.alfikri.signhandtranslator.R
 import com.alfikri.signhandtranslator.data.local.entity.DataDictionary
 import com.alfikri.signhandtranslator.databinding.ItemDictionaryBinding
 import com.bumptech.glide.Glide
@@ -19,6 +20,12 @@ class DictionaryAdapter(private val dictionaryClickListener: DictionaryClickList
                 .into(binding.ivHandsign)
             binding.tvAlphabet.text = dataDictionary.alphabet
             binding.btnBookmark.setOnClickListener { clickListener(dataDictionary) }
+
+            if(!dataDictionary.setFavorite){
+                binding.btnBookmark.setImageResource(R.drawable.ic_unbookmarks)
+            } else{
+                binding.btnBookmark.setImageResource(R.drawable.ic_bookmark)
+            }
         }
     }
 

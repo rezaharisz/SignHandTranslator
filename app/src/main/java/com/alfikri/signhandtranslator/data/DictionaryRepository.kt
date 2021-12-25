@@ -5,19 +5,19 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.alfikri.signhandtranslator.data.local.entity.DataDictionary
 import com.alfikri.signhandtranslator.data.local.sources.LocalDataSources
-import com.alfikri.signhandtranslator.utils.AppExecutors
 import com.alfikri.signhandtranslator.utils.PAGE_SIZE
 import com.alfikri.signhandtranslator.utils.PLACEHOLDERS
+import java.util.concurrent.Executors
 
-class DictionaryRepository private constructor(private val localDataSources: LocalDataSources, private val appExecutors: AppExecutors): DictionaryDataSources {
+class DictionaryRepository private constructor(private val localDataSources: LocalDataSources): DictionaryDataSources {
 
     companion object{
         @Volatile
         private var instance: DictionaryRepository? = null
 
-        fun getInstance(localDataSources: LocalDataSources, appExecutors: AppExecutors): DictionaryRepository =
+        fun getInstance(localDataSources: LocalDataSources): DictionaryRepository =
             instance ?: synchronized(this){
-                instance ?: DictionaryRepository(localDataSources, appExecutors).apply { instance = this }
+                instance ?: DictionaryRepository(localDataSources).apply { instance = this }
             }
     }
 
@@ -45,7 +45,7 @@ class DictionaryRepository private constructor(private val localDataSources: Loc
     }
 
     override fun setBookmark(dataDictionary: DataDictionary, state: Boolean) {
-        appExecutors.diskIO().execute {
+        Executors.newSingleThreadExecutor().execute {
             localDataSources.setBookmark(dataDictionary, state)
         }
     }
