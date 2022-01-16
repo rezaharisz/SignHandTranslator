@@ -62,18 +62,14 @@ class LoginFragment : Fragment() {
 
         firebaseAuth.signInWithEmailAndPassword(binding.edEmail.text.toString(), binding.edPassword.text.toString())
             .addOnCompleteListener {
-                if (it.isSuccessful){
-                    showProgress(false)
-                    view?.findNavController()?.navigate(R.id.action_login_to_homepage)
+                showProgress(false)
+                view?.findNavController()?.navigate(R.id.action_login_to_homepage)
 
-                    binding.edEmail.text?.clear()
-                    binding.edPassword.text?.clear()
-                } else{
-                    showProgress(false)
-                    Toast.makeText(context, "Login failed, please check your email and password", Toast.LENGTH_SHORT).show()
-                }
+                binding.edEmail.text?.clear()
+                binding.edPassword.text?.clear()
             }
             .addOnFailureListener {
+                showProgress(false)
                 Toast.makeText(context, "Login failed due to ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }

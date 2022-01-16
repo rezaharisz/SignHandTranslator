@@ -65,9 +65,7 @@ class HomeFragment : Fragment() {
             override fun onCancelled(@NonNull error: DatabaseError) {
                 Log.e(ERROR_MSG, error.message)
             }
-
         })
-
     }
 
 }

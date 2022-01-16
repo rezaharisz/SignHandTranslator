@@ -131,9 +131,15 @@ class EditActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 binding.edName.setText(snapshot.child(NAME).value.toString())
                 binding.edUsername.setText(snapshot.child(USERNAME).value.toString())
-                binding.edPhone.setText(snapshot.child(PHONE_NUMBER).value.toString())
                 binding.edCity.setText(snapshot.child(CITY).value.toString())
-                binding.edAbout.setText(snapshot.child(ABOUT_ME).value.toString())
+
+                if (snapshot.child(GENDER).value != null && snapshot.child(PHONE_NUMBER).value != null){
+                    binding.edPhone.setText(snapshot.child(PHONE_NUMBER).value.toString())
+                    binding.edAbout.setText(snapshot.child(ABOUT_ME).value.toString())
+                } else{
+                    binding.edPhone.setText("")
+                    binding.edPhone.setText("")
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {

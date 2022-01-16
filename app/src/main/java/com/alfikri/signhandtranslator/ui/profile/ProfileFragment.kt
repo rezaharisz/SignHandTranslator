@@ -104,12 +104,13 @@ class ProfileFragment : Fragment() {
                     binding.tvName.text = snapshot.child(NAME).value.toString()
                     binding.tvUsername.text = snapshot.child(USERNAME).value.toString()
                     binding.tvCity.text = snapshot.child(CITY).value.toString()
-                    binding.include.tvPhoneNumber.text = snapshot.child(PHONE_NUMBER).value.toString()
 
-                    if (snapshot.child(GENDER).value != null){
+                    if (snapshot.child(GENDER).value != null && snapshot.child(PHONE_NUMBER).value != null){
                         binding.include.tvGender.text = snapshot.child(GENDER).value.toString()
+                        binding.include.tvPhoneNumber.text = snapshot.child(PHONE_NUMBER).value.toString()
                     } else{
                         binding.include.tvGender.text = ""
+                        binding.include.tvPhoneNumber.text = ""
                     }
 
                     if (user != null) {

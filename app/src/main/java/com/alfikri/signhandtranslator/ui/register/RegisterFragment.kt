@@ -71,26 +71,24 @@ class RegisterFragment : Fragment() {
 
         firebaseAuth.createUserWithEmailAndPassword(binding.edEmail.text.toString(), binding.edPassword.text.toString())
             .addOnCompleteListener {
-                if (it.isSuccessful){
-                    val currentUser = firebaseAuth.currentUser
-                    val userDb = databaseReference?.child(currentUser?.uid.toString())
+                val currentUser = firebaseAuth.currentUser
+                val userDb = databaseReference?.child(currentUser?.uid.toString())
 
-                    userDb?.child(USERNAME)?.setValue(binding.edUsername.text.toString())
-                    userDb?.child(NAME)?.setValue(binding.edName.text.toString())
-                    userDb?.child(CITY)?.setValue(binding.edCity.text.toString())
+                userDb?.child(USERNAME)?.setValue(binding.edUsername.text.toString())
+                userDb?.child(NAME)?.setValue(binding.edName.text.toString())
+                userDb?.child(CITY)?.setValue(binding.edCity.text.toString())
 
-                    showProgress(false)
+                showProgress(false)
 
-                    Toast.makeText(context, "Register Successfull, Please Login First", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Register Successful, Please Login First", Toast.LENGTH_SHORT).show()
 
-                    view?.findNavController()?.navigate(R.id.action_register_to_login)
+                view?.findNavController()?.navigate(R.id.action_register_to_login)
 
-                    binding.btnRegister.isEnabled = false
-                } else{
-                    showProgress(false)
-
-                    Toast.makeText(context, "Registration Failed, check your internet connection", Toast.LENGTH_SHORT).show()
-                }
+                binding.btnRegister.isEnabled = false
+            }
+            .addOnFailureListener {
+                showProgress(false)
+                Toast.makeText(context, "Register failed due to ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }
 
